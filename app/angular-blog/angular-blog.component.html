@@ -1,0 +1,140 @@
+<div class="main-wrap">
+    <div class="angular-blog">
+        <div>
+            <h3  class="blog-title">Angular post</h3>
+        </div>
+        <span [ngSwitch]="inAdmin">
+            <ng-container *ngSwitchCase="true">
+              <div class="button-main">
+                <button value="signIn" class="sign-in sign" (click)="addPost()">Add post</button>
+                <button class="for-admin sign">Admin</button>
+                <button value="signUp" class="sign-up sign sign-up1" (click)="signOut()">Sign Out</button>
+              </div>
+            </ng-container>
+          
+            <ng-container *ngSwitchCase="false">
+              <span [ngSwitch]="inUser">
+                <ng-container *ngSwitchCase="true">
+                  <div class="button-main">
+                    <button value="signIn"  (click)="addPost()" class="sign-in sign">Add post</button>
+                    <button class="for-admin sign"  ><div>{{usern}}</div></button>
+                    <button value="signUp" class="sign-up sign" (click)="singOutForUsers()">Sign Out</button>
+                  </div>
+                </ng-container>
+          
+              </span>
+            </ng-container>
+          </span>
+          <div class="button-main" *ngIf="expression">
+            <button value="signIn" (click)="isOpenAdmin()" class="sign-in sign">Sign In</button>
+            <button value="signUp" class="sign-up sign" (click)="userSign()">Sign Up</button>
+          </div>
+       
+    </div>
+</div>
+    <ng-container #name  class="form-admin"  *ngIf="isAdmin">
+        <div class="overlay">
+            <div class="main">
+                <div class="title-admin">
+                    <h1>Sign In</h1>
+                    <button class="title-button" (click)="closeAdmin()">X</button>
+                </div>
+               
+                <div class="main-admin">
+                    <p>Email:</p>
+                    <input type="text" [(ngModel)]="email" ngDefaultControl>
+                    <p>Password:</p>
+                    <input type="password"  [(ngModel)]="password"  ngDefaultControl>
+                </div>
+                <div class="admin-button">
+                    <button (click)="closeAdmin()" class="btn close-btn">Close</button>
+                    <button  class="btn submit-btn" (click)="enterAdmin()">Submit</button>
+                </div>
+            </div>
+        </div> 
+    </ng-container>
+    <div class="post" >
+        <div class="every-post" *ngFor="let item of adminPosts">
+            <div >
+            <div class="for-date"> 
+                <h3>{{item.topic}}</h3>
+            <p class="date">{{item.date | date:'medium'}}</p>
+            </div>
+            <p class="posted-by">Posted by: {{item.postedBy}}</p> 
+           
+            <p>{{item.message}}</p>
+            <div class="is-button" *ngIf="inAdmin || item.postedBy===usern ">
+                <button class="btn1 btn-edit" (click)="editPost(item)">Edit</button>
+                <button  class="btn1 btn-delete " (click)="deletePost(item)">Delete</button>
+            </div></div>
+
+        </div>
+    </div>
+
+        <ng-container #name  class="form-admin " *ngIf="ifAddPost">
+            <div class="overlay">
+                <div class="main">
+                    <div class="title-admin">
+                        <h1>Add post</h1>
+                        <button class="title-button" (click)="closeAdd()">X</button>
+                    </div>
+                    <div class="main-admin">
+                        <p>Title:</p>
+                        <input type="text" class="text" [(ngModel)]="title" ngDefaultControl>
+                        <p >Text:</p>
+                        <textarea name="" id="" [(ngModel)]="message1" ngDefaultControl ></textarea>
+                    </div>
+                    <div class="admin-button">
+                        <div> <button class="btn close-btn" (click)="closeAdd()">Close</button></div>
+                      <div [ngSwitch]="editStatus">
+                      <div *ngSwitchCase="true">
+                        <button  class="btn submit-btn" (click)="saveChanges()" >Edit</button>
+                      </div>
+                      <div *ngSwitchCase="false">
+                        <button  class="btn submit-btn" (click)="postNewPost()">Post</button>
+                      </div>
+                    </div>
+                        
+                      
+                    </div>
+                </div>
+            </div> 
+        </ng-container>
+        <ng-container #name  class="form-admin1 " *ngIf="userSignUp">
+            <div class="overlay1">
+                <div class="main">
+                    <div class="title-admin">
+                        <h1>Sign up</h1>
+                        <button class="title-button" (click)="closeSign()">X</button>
+                    </div>
+                    <div class="main-admin">
+                        <p>Username:</p>
+                        <input type="text" class="text" [(ngModel)]="userName" ngDefaultControl>
+                        <p >Email:</p>
+                       <input type="email" [(ngModel)]="userEmail" ngDefaultControl>
+                       <p >Password:</p>
+                       <input type="password" [(ngModel)]="userPassword" ngDefaultControl>
+                       
+                </div>
+                <div class="admin-button">
+                    <div> <button class="btn close-btn" (click)="closeSign()">Close</button></div>
+                    <button  class="btn close-btn submit-btn" (click)="submitUser()" >Submit</button>
+                
+                </div>
+                <div class="error">{{userExisting}}</div>
+                    </div>
+                 
+                   
+            </div> 
+        </ng-container>
+
+
+   
+
+
+
+
+    
+
+ 
+ 

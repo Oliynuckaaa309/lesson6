@@ -1,0 +1,202 @@
+
+ .main-wrap{
+    width: 100%;
+} 
+
+.angular-blog{
+    height: 80px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.blog-title{
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+.button-main{
+    margin-right: 20px;
+}
+.sign{
+    padding: 12px 10px;
+
+}
+.sign-in{
+    background-color: black;
+    color: green;
+    border: 1px solid green;
+    font-size: 16px;
+
+}
+.sign-up{
+    background-color: black;
+    color: blue;
+    border: 1px solid blue;
+    font-size: 16px;
+
+}
+.sign-in:hover{
+    background-color: green;
+    color: white;
+}
+.sign-up:hover{
+    background-color:rgb(250, 171, 0) ;
+    color: black;
+    border-color:rgb(250, 171, 0) ;
+   
+}
+.main{
+    width: 33%;
+    /* height: 400px; */
+    background-color:white;
+    padding: 30px 0px 20px 50px;
+ 
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .overlay1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .admin-button{
+    display: flex;
+  }
+  .title-admin{
+    display: flex;
+    justify-content: space-between;
+  }
+  .title-button{
+    border: none;
+    background-color: white;
+    font-size: 26px;
+    padding-right: 40px;
+  }
+  p{
+    padding: 20px 0px 20px 0px;
+    font-size: 24px;
+  }
+  .main-admin{
+    width: 90%;
+    margin-top: 15px;
+  }
+  input{
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+ 
+  }
+ textarea{
+    width: 100%;
+    height: 100px;
+ }
+
+
+
+
+.btn{
+    width: 80px;
+    height: 50px;
+    border:none;
+    font-size: 20px;
+
+}
+.close-btn{
+    background-color: gray;
+    color: white;
+    margin-right: 15px;
+   
+}
+.submit-btn{
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+.for-admin{
+    color: white;
+}
+.for-admin{
+    background-color: rgb(250, 171, 0);
+    width: 60px;
+    height: 43px;
+    font-size: 16px;
+    color: black;
+    border: none;
+}
+.post{
+    width: 80%;
+    margin: 10px auto;
+    min-height: 150px;
+}
+.every-post{
+    border: 1px solid rgb(202, 202, 212);
+    padding: 20px 0px 20px 15px;
+    margin-bottom: 10px;
+}
+.for-date{
+    display: flex;
+    justify-content: space-between;
+}
+.date{
+    font-size: 16px;
+    padding-right: 20px;
+}
+p{
+    margin-top: -20px;
+}
+.posted-by{
+    color: rgb(185, 179, 179);
+}
+.is-button{
+    transform: translate(80%, 0);
+}
+.btn1{
+    border: none;
+    padding: 10px;
+}
+
+.btn-edit{
+    background-color: rgb(253, 110, 15);
+}
+.btn-delete{
+    color: white;
+    background-color: red;
+   
+}
+.form-admin1{
+    min-height: 300px;
+}
+.admin-button{
+   position: relative;
+   top: 10px;
+   right: 0px;
+} 
+.text{
+    margin-bottom: 8px;
+}
+.submit-btn{
+    background-color: darkcyan;
+}
+.error{
+    color: red;
+   
+}
+
+  
